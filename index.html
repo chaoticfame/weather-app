@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div class="app" role="application">
+    <header>
+      <div>
+        <h1>Weather App</h1>
+        <div class="hint">Search any city or use your current location</div>
+      </div>
+      <div class="controls">
+        <input id="cityInput" type="text" placeholder="e.g. Manila" aria-label="City" />
+        <button id="searchBtn">Search</button>
+        <button id="locBtn">Use my location</button>
+      </div>
+      <button id="themeBtn">Toggle Light/Dark</button>
+    </header>
+
+    <div id="error" class="error" aria-live="polite"></div>
+
+    <div class="main">
+      <div class="card" id="leftCard">
+        <div id="now" class="weather-now">
+          <div>
+            <div id="iconWrap"><img id="icon" src="" alt="" width="96" height="96" /></div>
+          </div>
+          <div>
+            <div id="city" style="font-weight:700;font-size:18px">—</div>
+            <div class="temp" id="temp">--°C</div>
+            <div class="desc" id="desc">—</div>
+            <div class="meta">
+              <div id="humidity">Humidity: —</div>
+              <div id="wind">Wind: —</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font-weight:700;margin-bottom:6px">3-day forecast</div>
+          <div id="forecast" class="forecast"></div>
+        </div>
+      </div>
+
+      <aside class="card" id="rightCard">
+        <div style="font-weight:700">Details</div>
+        <div id="details" style="margin-top:10px;color:var(--muted);font-size:14px">
+          <div>Feels like: <span id="feels">—</span></div>
+          <div>Pressure: <span id="pressure">—</span></div>
+          <div>Visibility: <span id="visibility">—</span></div>
+          <div>Sunrise: <span id="sunrise">—</span></div>
+          <div>Sunset: <span id="sunset">—</span></div>
+        </div>
+        <footer>
+          <div style="margin-top:10px" class="small">Using Open-Meteo API — free, no API key required.</div>
+        </footer>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
